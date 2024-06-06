@@ -102,7 +102,7 @@ typedef struct {
   const unsigned char* bitmap;
 } bagl_glyph_array_entry_t;
 
-extern const bagl_glyph_array_entry_t const C_glyph_array[]; 
+extern const bagl_glyph_array_entry_t C_glyph_array[]; 
 extern const unsigned int C_glyph_count;
 
 // -------------------------------------------------------------------------------------- 
@@ -122,7 +122,7 @@ typedef struct {
   unsigned char char_kerning; // specific to the font
   unsigned short first_char;
   unsigned short last_char;
-  const bagl_font_character_t const * characters;
+  const bagl_font_character_t * characters;
   unsigned char const * bitmap; // single bitmap for all chars of a font
 } bagl_font_t;
 

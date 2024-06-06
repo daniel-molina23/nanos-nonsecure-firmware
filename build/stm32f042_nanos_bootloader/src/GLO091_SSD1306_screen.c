@@ -30,7 +30,7 @@ unsigned char screen_charbuffer[PRINTF_LINE_CHAR_LENGTH*PRINTF_LINE_COUNT];
 
 
 //#define REG_SET(reg, mask, value) reg = ((reg) & ~mask) | value 
-void REG_SET(volatile unsigned int * reg, unsigned int pin, unsigned int value) {
+void REG_SET(volatile uint32_t * reg, unsigned int pin, unsigned int value) {
   volatile v = 1+pin;
   *reg = (*reg & ~(1<<pin)) | (value<<pin); 
 }
@@ -443,7 +443,7 @@ end:
   return;
 }
 
-void bagl_hal_draw_bitmap_within_rect(int x, int y, unsigned int width, unsigned int height, unsigned int color_count, unsigned int *colors, unsigned int bit_per_pixel, unsigned char* bitmap, unsigned int bitmap_length_bits) {
+void bagl_hal_draw_bitmap_within_rect(int x, int y, unsigned int width, unsigned int height, unsigned int color_count, const unsigned int *colors, unsigned int bit_per_pixel, const unsigned char* bitmap, unsigned int bitmap_length_bits) {
 
   // horizontal scan
   if (x>= SCREEN_WIDTH || y >= SCREEN_HEIGHT) {
@@ -474,7 +474,7 @@ void bagl_hal_draw_bitmap_within_rect(int x, int y, unsigned int width, unsigned
   bagl_hal_draw_bitmap_within_rect_internal(bit_per_pixel, bitmap, bitmap_length_bits);
 }
 
-void bagl_hal_draw_bitmap_continue(unsigned int bit_per_pixel, unsigned char* bitmap, unsigned int bitmap_length_bits) {
+void bagl_hal_draw_bitmap_continue(unsigned int bit_per_pixel, const unsigned char* bitmap, unsigned int bitmap_length_bits) {
   bagl_hal_draw_bitmap_within_rect_internal(bit_per_pixel, bitmap, bitmap_length_bits);
 }
 
