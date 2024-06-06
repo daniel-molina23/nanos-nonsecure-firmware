@@ -1,0 +1,5 @@
+build/stm32f042_nanos_bootloader/bin/
+build/stm32f042_nanos_bootloader/debug/
+build/stm32f042_nanos_bootloader/dep/
+build/stm32f042_nanos_bootloader/obj/
+build/stm32f042_nanos_bootloader/script.ld
